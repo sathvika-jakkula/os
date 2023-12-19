@@ -20,6 +20,8 @@ int main(){
 	for(i=1;i<=p;i++){
 		z=-1;
 		for(j=1;j<=m;j++){
+			if(flag[j]==0){
+		
 			if( process[i]<=memory[j]){
 				if(z==-1){
 					z=j;
@@ -28,9 +30,11 @@ int main(){
 				}
 			}
 		}
+			}
 		if(z!=-1){
 			allocate[i]=z;
 			memory[z]=memory[z]-process[i];
+			flag[z]=1;
 		}
 	}
 	for(i=1;i<=p;i++){
